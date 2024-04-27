@@ -1,0 +1,14 @@
+package java_first;
+
+import java.math.BigDecimal;
+
+public class Decimal {
+
+	public static void main(String[] args) {
+		BigDecimal a = new BigDecimal("0.2");
+		BigDecimal b = new BigDecimal("0.5");
+		
+		
+	}
+
+}

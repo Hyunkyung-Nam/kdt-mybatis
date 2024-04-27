@@ -1,0 +1,14 @@
+package java_first;
+
+import java.util.Scanner;
+
+public class Scan {
+
+	public static void main(String[] args) {
+		System.out.println("이름, 나이, 키, 결혼 여부를 빈칸으로 분리하여 입력하세요");
+		
+		Scanner scan = new Scanner(System.in);
+
+	}
+
+}

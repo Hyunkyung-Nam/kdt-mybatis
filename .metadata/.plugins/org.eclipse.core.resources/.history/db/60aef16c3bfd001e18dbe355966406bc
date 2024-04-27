@@ -1,0 +1,26 @@
+package java_first;
+
+import java.util.Scanner;
+
+public class MethodOverloadingPractice {
+	
+	public double calArea(double radius) {
+		return radius * radius * 3.14;
+	}
+	
+	public double calArea(int width, double height) {
+		return width * height;
+	}
+	
+	public double calArea(double base, double height) {
+		return base * height / 2;
+	}
+	
+	
+
+	public static void main(String[] args) {
+		MethodOverloadingPractice oprator = new MethodOverloadingPractice();
+
+	}
+
+}

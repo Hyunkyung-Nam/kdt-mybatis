@@ -1,0 +1,14 @@
+package java_first;
+import java.util.Scanner;
+
+public class Condition {
+
+	public static void main(String[] args) {
+		//조건문 
+		Scanner scan = new Scanner(System.in);
+		System.out.println("수를 입력하세요");
+		int num = scan.nextInt();
+		
+	}
+
+}

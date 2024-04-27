@@ -1,0 +1,11 @@
+package java_first;
+
+public class BasicType {
+
+	public static void main(String[] args) {
+		int number = 10; // 정수형 변수
+		double pi = 3.141592; // 실수형 변
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package java_first;
+
+public class BasicType {
+
+	public static void main(String[] args) {
+		int number = 10; // 정수형 변수
+		double pi = 3.141592; // 실수형 변수 
+		boolean isActive = false; //논리형 변수
+		char initial = 'a'; // 문자 변수  홑따옴표 사
+		
+
+	}
+
+}
