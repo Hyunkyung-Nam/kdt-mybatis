@@ -3,9 +3,10 @@
 
 <mapper namespace="kdtmybatis.kdt11.mapper.BoardMapper">
     <select id="selectAll" resultType="kdtmybatis.kdt11.domain.Board">
-        SELECT * FROM board
+        SELECT * FROM board ORDER BY id DESC
     </select>
-    <select id="selectWriter" resultType="kdtmybatis.kdt11.domain.Board">
+    <!--    파라미터 타입 넣어야하는데 안넣었음.. 근데 잘돌아가네..? parameterType="String"-->
+    <select id="selectWriter" resultType="kdtmybatis.kdt11.domain.Board" >
         SELECT * FROM board WHERE writer = #{writer}
     </select>
     <insert id="insertBoard" parameterType="kdtmybatis.kdt11.domain.Board">

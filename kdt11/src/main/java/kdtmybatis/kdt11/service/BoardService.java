@@ -22,6 +22,7 @@ public class BoardService {
         List<Board> boards = boardMapper.selectAll();
         List<BoardDTO> boardDTOList = new ArrayList<>();
 
+//      반복되는 부분 메서드로 따로 뺴도 괜찮을 듯!
         for(Board board:boards){
             BoardDTO boardDTO = new BoardDTO();
             boardDTO.setId(board.getId());
@@ -50,6 +51,7 @@ public class BoardService {
         return boardDTOList;
     }
 
+    // 매개변수도 보드 DTO로 받아서 바꿔서 넣는게 정석??? 무슨말일까잉 ㅇㅂㅇ
     public void addBoard(Board board){
         boardMapper.insertBoard(board);
     }
