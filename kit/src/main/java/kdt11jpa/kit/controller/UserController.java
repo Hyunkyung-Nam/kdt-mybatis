@@ -3,6 +3,7 @@ package kdt11jpa.kit.controller;
 import kdt11jpa.kit.dto.UserDTO;
 import kdt11jpa.kit.entity.UserEntity;
 import kdt11jpa.kit.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.Repository;
@@ -15,13 +16,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@RequiredArgsConstructor
 public class UserController {
-    private UserService userService;
+    private final UserService userService;
 
-    @Autowired
-    public UserController(UserService userService){
-        this.userService = userService;
-    }
+//    @Autowired
+//    public UserController(UserService userService){
+//        this.userService = userService;
+//    }
+
     //유저 전체조회
     @GetMapping
     public ResponseEntity<List<UserDTO>> findAll(){
@@ -36,9 +39,8 @@ public class UserController {
     }
     //name or nickname을 가진 유저 모두 조회
     @GetMapping("/search")
-    public ResponseEntity<List<UserDTO>> findByNameOrNickname(@Param("name") String name, @Param("nickname") String nickname) {
-        System.out.print(name + nickname);
-        List<UserDTO> users = userService.findByNameOrNickname(name, nickname);
+    public ResponseEntity<List<UserDTO>> findByNameOrNickname(@Param("name") String name) {
+        List<UserDTO> users = userService.findByNameOrNickname(name);
         return ResponseEntity.ok(users);
     }
     //name을 가진 유저 존재여부 확인
@@ -50,9 +52,9 @@ public class UserController {
 
     //user등록
     @PostMapping
-    public ResponseEntity<Void> createUser(@RequestBody UserEntity user){
-        userService.createUser(user);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    public ResponseEntity<UserEntity> createUser(@RequestBody UserDTO userDTO){
+        UserEntity user = userService.create(userDTO);
+        return ResponseEntity.ok(user);
     }
 
 }
